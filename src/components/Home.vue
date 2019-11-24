@@ -60,11 +60,11 @@
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
-import utilMixin from '@/mixins/utilMixin'
+import ghpagesResolver from '@/mixins/ghpagesRouteResolver'
 
 export default {
   name: 'Home',
-  mixins: [utilMixin],
+  mixins: [ghpagesResolver],
 
   data () {
     return {

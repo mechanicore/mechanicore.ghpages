@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import utilMixin from '@/mixins/utilMixin'
+import ghpagesResolver from '@/mixins/ghpagesRouteResolver'
 
 export default {
   name: 'Admin',
-  mixins: [utilMixin],
+  mixins: [ghpagesResolver],
 
   data () {
     return {
