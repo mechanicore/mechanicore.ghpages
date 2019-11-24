@@ -49,8 +49,8 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: '/static',
-    assetsPublicPath: '/mechanicore.ghpages',
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/mechanicore.ghpages/',
 
     /**
      * Source Maps
