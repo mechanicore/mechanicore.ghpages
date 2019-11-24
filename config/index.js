@@ -6,6 +6,13 @@ require('dotenv').config()
 console.log('---- PRODUCTION')
 console.log(process.env.NODE_ENV)
 console.log(process.env.GH_PAGES_REPOSITORY)
+const GH_PAGES_REPOSITORY = '/mechanicore.ghpages/'
+
+if (process.env.GH_PAGES_REPOSITORY === undefined) {
+  console.log(`building production in ${GH_PAGES_REPOSITORY}`)
+} else {
+  console.log('building production in local "/"')
+}
 
 module.exports = {
   dev: {
@@ -53,7 +60,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: process.env.NODE_ENV === 'production'  ? '/mechanicore.ghpages/' : '/',
+    assetsPublicPath: process.env.GH_PAGES_REPOSITORY === undefined ? GH_PAGES_REPOSITORY : '/',
 
     /**
      * Source Maps
