@@ -5,22 +5,23 @@ import Admin from '@/components/Admin'
 import Info from '@/components/Info'
 
 Vue.use(Router)
+const basePath = '/mechanicore.ghpages'
 
 export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: basePath,
       name: 'Home',
       component: Home,
     },
     {
-      path: '/admin',
+      path: basePath.concat('/admin'),
       name: 'Admin',
       component: Admin,
     },
     {
-      path: '/info',
+      path: basePath.concat('/info'),
       name: 'Info',
       component: Info,
     },
