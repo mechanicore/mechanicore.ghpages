@@ -53,7 +53,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: process.env.NODE_ENV === 'production'  ? process.env.GH_PAGES_REPOSITORY : '/',
+    assetsPublicPath: process.env.NODE_ENV === 'production'  ? '/mechanicore.ghpages/' : '/',
 
     /**
      * Source Maps
