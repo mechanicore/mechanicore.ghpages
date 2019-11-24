@@ -28,6 +28,8 @@ const routes = [
   path: (process.env.NODE_ENV === 'production') ? GH_PAGES.REPOSITORY.concat(route.path) : route.path,
 }))
 
+console.log(routes)
+
 console.log('---ROUTES')
 console.log(process.env.NODE_ENV)
 
