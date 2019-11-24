@@ -3,5 +3,5 @@ module.exports = {
     BASE_PATH: '/',
     REPOSITORY : '/mechanicore.ghpages',
   },
-  PRODUCTION: false,
+  PRODUCTION: true,
 }
