@@ -16,12 +16,12 @@ export default new Router({
       component: Home,
     },
     {
-      path: basePath.concat('/admin'),
+      path: '/mechanicore.ghpages/admin',
       name: 'Admin',
       component: Admin,
     },
     {
-      path: basePath.concat('/info'),
+      path: '/mechanicore.ghpages/info',
       name: 'Info',
       component: Info,
     },
