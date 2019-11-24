@@ -45,12 +45,12 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../mechanicore.ghpages/dist/index.html'),
+    index: path.resolve(__dirname, '../dist/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../mechanicore.ghpages/dist'),
-    assetsSubDirectory: '/mechanicore.ghpages/static',
-    assetsPublicPath: '/mechanicore.ghpages',
+    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
 
     /**
      * Source Maps
