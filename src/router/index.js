@@ -3,27 +3,38 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Admin from '@/components/Admin'
 import Info from '@/components/Info'
+import { PRODUCTION, GH_PAGES } from '@/defines/constants'
 
 Vue.use(Router)
-const basePath = '/mechanicore.ghpages'
 
-export default new Router({
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: Admin,
+  },
+  {
+    path: '/info',
+    name: 'Info',
+    component: Info,
+  },
+].map(route => ({
+  ...route,
+  path: (process.env.NODE_ENV === 'production') ? GH_PAGES.REPOSITORY.concat(route.path) : route.path,
+}))
+
+console.log('---ROUTES')
+console.log(process.env.NODE_ENV)
+
+const router = new Router({
+  routes,
   mode: 'history',
-  routes: [
-    {
-      path: basePath,
-      name: 'Home',
-      component: Home,
-    },
-    {
-      path: '/mechanicore.ghpages/admin',
-      name: 'Admin',
-      component: Admin,
-    },
-    {
-      path: '/mechanicore.ghpages/info',
-      name: 'Info',
-      component: Info,
-    },
-  ],
+
 })
+
+export default router

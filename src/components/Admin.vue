@@ -2,16 +2,20 @@
   div(class="hello")
     h1 {{ msg }}
 
-    router-link(to='/') Home
+    router-link(:to="basePath" ref='home') Home
     span  | 
-    router-link(to='/admin') Admin
+    router-link(:to="basePath.concat('admin')" ref='admin') Admin
     span  | 
-    router-link(to='/info') Information
+    router-link(:to="basePath.concat('info')" ref='info') Information
 </template>
 
 <script>
+import utilMixin from '@/mixins/utilMixin'
+
 export default {
   name: 'Admin',
+  mixins: [utilMixin],
+
   data () {
     return {
       msg: 'Admin',

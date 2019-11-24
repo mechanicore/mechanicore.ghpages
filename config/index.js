@@ -1,8 +1,11 @@
 'use strict'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
-
 const path = require('path')
+require('dotenv').config()
+console.log('---- PRODUCTION')
+console.log(process.env.NODE_ENV)
+console.log(process.env.GH_PAGES_REPOSITORY)
 
 module.exports = {
   dev: {
@@ -50,7 +53,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/mechanicore.ghpages/',
+    assetsPublicPath: process.env.NODE_ENV === 'production'  ? process.env.GH_PAGES_REPOSITORY : '/',
 
     /**
      * Source Maps

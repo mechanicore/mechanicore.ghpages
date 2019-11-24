@@ -2,11 +2,11 @@
   div(class="hello")
     h1 {{ msg }}
 
-    router-link(to='/') Home
+    router-link(:to="basePath" ref='home') Home
     span  | 
-    router-link(to='/admin') Admin
+    router-link(:to="basePath.concat('admin')" ref='admin') Admin
     span  | 
-    router-link(to='/info') Information
+    router-link(:to="basePath.concat('info')" ref='info') Information
 
     p Total Count: {{ totalCount }}
     p Pilot Name: {{ pilotName }}
@@ -60,9 +60,12 @@
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
+import utilMixin from '@/mixins/utilMixin'
 
 export default {
   name: 'Home',
+  mixins: [utilMixin],
+
   data () {
     return {
       msg: 'Home - Vuex Demo',
