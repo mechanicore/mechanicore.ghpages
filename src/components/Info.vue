@@ -2,11 +2,11 @@
   div(class="hello")
     h1 {{ msg }}
 
-    router-link(:to="basePath" ref='home') Home
+    router-link(:to="basePath === '' ? '/' : basePath") Home
     span  | 
-    router-link(:to="basePath.concat('admin')" ref='admin') Admin
+    router-link(:to="basePath.concat('/admin')") Admin
     span  | 
-    router-link(:to="basePath.concat('info')" ref='info') Information
+    router-link(:to="basePath.concat('/info')") Information
 </template>
 
 <script>
