@@ -14,12 +14,12 @@ const routes = [
     component: Home,
   },
   {
-    path: 'admin',
+    path: '/admin',
     name: 'Admin',
     component: Admin,
   },
   {
-    path: 'info',
+    path: '/info',
     name: 'Info',
     component: Info,
   },
